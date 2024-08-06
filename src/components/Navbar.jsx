@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
 
 const Section = styled.div`
   display: flex;
@@ -23,29 +25,29 @@ const Container = styled.div`
   }
 `;
 
-const Links = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 50px;
-`;
+// const Links = styled.div`
+//   display: flex;
+//   align-items: center;
+//   gap: 50px;
+// `;
 
 const Logo = styled.img`
   height: 50px;
 `;
 
-const List = styled.ul`
-  display: flex;
-  gap: 20px;
-  list-style: none;
+// const List = styled.ul`
+//   display: flex;
+//   gap: 20px;
+//   list-style: none;
 
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
+//   @media only screen and (max-width: 768px) {
+//     display: none;
+//   }
+// `;
 
-const ListItem = styled.li`
-  cursor: pointer;
-`;
+// const ListItem = styled.li`
+//   cursor: pointer;
+// `;
 
 const Icons = styled.div`
   display: flex;
@@ -68,23 +70,26 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+function handelSubmit(){
+  console.log('handelSubmit')
+}
+
 const Navbar = () => {
   return (
     <Section>
       <Container>
-        <Links>
+
           <Logo src="./img/logo.png" />
-          <List>
-            <ListItem>Home</ListItem>
-            <ListItem>Studio</ListItem>
-            <ListItem>Works</ListItem>
-            <ListItem>Contact</ListItem>
-          </List>
-        </Links>
+
+            <Nav.Link as={Link} to="/hero">dwdawd</Nav.Link>
+            <Nav.Link as={Link} to="/who">dwdawd</Nav.Link>
+            <Nav.Link as={Link} to="/contact">dwdawd</Nav.Link>
+            <Nav.Link as={Link} to="/works">dwdawd</Nav.Link>
+          
         <Icons>
           {/* Changed the image due to copyright problems */}
           <Icon src="./img/search.png" />
-          <Button>Hire Now</Button>
+          <Button onClick={handelSubmit}>Hire Now</Button>
         </Icons>
       </Container>
     </Section>
