@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
-import { Nav } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+// import { Nav } from 'react-bootstrap';
 
 const Section = styled.div`
   display: flex;
@@ -13,11 +13,15 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  width: 1400px;
+  width: 1000px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0px;
+  background-color: black;
+  margin-top: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 1px 5px 5px red;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -25,29 +29,36 @@ const Container = styled.div`
   }
 `;
 
-// const Links = styled.div`
-//   display: flex;
-//   align-items: center;
-//   gap: 50px;
-// `;
+
+const Links = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 230px;
+`;
 
 const Logo = styled.img`
   height: 50px;
+  cursor: pointer;
+  margin-left: 30px;
 `;
 
-// const List = styled.ul`
-//   display: flex;
-//   gap: 20px;
-//   list-style: none;
+const List = styled.ul`
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  
 
-//   @media only screen and (max-width: 768px) {
-//     display: none;
-//   }
-// `;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+`;
 
-// const ListItem = styled.li`
-//   cursor: pointer;
-// `;
+const ListItem = styled.li`
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+
+`;
 
 const Icons = styled.div`
   display: flex;
@@ -70,22 +81,37 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function handelSubmit(){
-  console.log('handelSubmit')
+function handelSubmit() {
+  console.log("handelSubmit");
 }
 
 const Navbar = () => {
   return (
     <Section>
       <Container>
-
+        <Links>
           <Logo src="./img/logo.png" />
+          <List>
+            <ListItem as={Link} to="/hero">Hero</ListItem>
+            <ListItem as={Link} to="/who">Who</ListItem>
+            <ListItem as={Link} to="/works">Works</ListItem>
+            <ListItem as={Link} to="/contact">Contact</ListItem>
+          </List>
+        </Links>
 
-            <Nav.Link as={Link} to="/hero">dwdawd</Nav.Link>
-            <Nav.Link as={Link} to="/who">dwdawd</Nav.Link>
-            <Nav.Link as={Link} to="/contact">dwdawd</Nav.Link>
-            <Nav.Link as={Link} to="/works">dwdawd</Nav.Link>
-          
+        {/* <Nav Link as={Link} to="/hero">
+          hero
+        </Nav>
+        <Nav Link as={Link} to="/who">
+          who
+        </Nav>
+        <Nav Link as={Link} to="/contact">
+          conatct
+        </Nav>
+        <Nav Link as={Link} to="/works">
+          woek
+        </Nav> */}
+
         <Icons>
           {/* Changed the image due to copyright problems */}
           <Icon src="./img/search.png" />
